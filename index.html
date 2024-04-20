@@ -10,11 +10,18 @@
 
 <body>
   <h3>Fabric Scaling Tool.</h3>
-  <img id="output" src="" />
-  
-  <input type="file" onchange="displayImage()"/>
+  <div id="ruler">
+    <div id="vertical-ruler"></div>
+    <div id="horizontal-ruler"></div>
+    <div id="output" src="IMG_9480.JPG"></div>
+  </div>
 
-  <script> 
+  <input type="number" value="3" id="width"/>
+  <input type="number" value="3" id="height"/>
+
+  <input type="file" onchange="displayImage()" />
+
+  <script>
     function displayImage() {
       var image = document.getElementById('output')
       image.src = URL.createObjectURL(event.target.files[0]);
