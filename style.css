@@ -2,3 +2,13 @@ html {
   height: 100%;
   width: 100%;
 }
+
+img {
+  --size: 3in;
+  min-width: var(--size);
+  min-height: var(--size);
+  max-width: var(--size);
+  max-height: var(--size);
+  background-color: red;
+  object-fit: cover;
+}

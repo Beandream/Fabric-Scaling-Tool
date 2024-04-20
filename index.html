@@ -4,12 +4,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>Fabric Scaling Tool</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
-  Hello world
+  <h3>Fabric Scaling Tool.</h3>
+  <img id="output" src="" />
+  
+  <input type="file" onchange="displayImage()"/>
+
+  <script> 
+    function displayImage() {
+      var image = document.getElementById('output')
+      image.src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
   <script src="script.js"></script>
 </body>
 
