@@ -41,7 +41,7 @@ function displayImage() {
   var url = URL.createObjectURL(event.target.files[0]);
   img.src = url;
   img.onload = () => {
-    var value = (img.width / 96);
+    var value = (img.width / 300);
     ScaleInput.value = value;
     WidthInput.value = value;
     imageWidth = value;
