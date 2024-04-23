@@ -35,7 +35,17 @@ function setImageScale() {
 setImageScale();
 
 function displayImage() {
+  let img = new Image()
   var image = document.getElementById('output')
+  
   var url = URL.createObjectURL(event.target.files[0]);
+  img.src = url;
+  img.onload = () => {
+    var value = (img.width / 96);
+    ScaleInput.value = value;
+    WidthInput.value = value;
+    imageWidth = value;
+    setImageScale();
+  }
   image.style.setProperty('background-image', "url(" + url + ")");
 }
