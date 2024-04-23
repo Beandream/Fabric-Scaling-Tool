@@ -2,6 +2,5 @@
 
 Todo:
 - [ ] add numbers to rulers.
-- [ ] add slider to scale print.
-- [ ] change size inputs to be aspect ratio settings.
+- [X] add slider to scale print.
 - [ ] make nicer upload button.

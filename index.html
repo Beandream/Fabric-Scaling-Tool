@@ -11,9 +11,10 @@
 <body>
   <h3>Fabric Scaling Tool.</h3>
   <div id="rulers">
-    <div id="veiw-scale-options" onclick="changeVeiwScaleOptions()">
+    <span>in.</span>
+    <div id="veiw-scale-options" onclick="changeViewScaleOptions()">
       <label class="scale-option-label">
-        <input type="radio" name="scale-options" value="12" checked />
+        <input type="radio" name="scale-options" value="12" />
         <span>12 Inches</span>
       </label>
 
@@ -23,7 +24,7 @@
       </label>
 
       <label class="scale-option-label">
-        <input type="radio" name="scale-options" value="72" />
+        <input type="radio" name="scale-options" value="72" checked/>
         <span>Fabric Width</span>
       </label>
 
@@ -33,45 +34,14 @@
     <div id="output" src="IMG_9480.JPG"></div>
   </div>
 
-  <input type="number" onchange="changeScale()" value="12" id="width"/>
-  <input type="number" onchange="changeScale()" value="12" id="height"/>
+  <label>
+    Adjust Scale
+    <input type="range" id="scale-input" min="1" max="72" value="72" step="1" />
+    <input type="number" min="1" onchange="onWidthInput()" value="72" id="width-input"/>
+  </label>
 
   <input type="file" onchange="displayImage()" />
 
-  <script>
-    var scaleFactor = 12;
-    var imageWidth = 12;
-    var imageHeight = 12;
-
-    const rulerSize = 3;
-
-
-    function changeVeiwScaleOptions() {
-      var value = document.querySelector('input[name="scale-options"]:checked').value;
-      scaleFactor = value;
-      setImageScale();
-    }
-
-    function changeScale() {
-      imageWidth = document.getElementById("width").value;
-      imageHeight = document.getElementById("height").value;
-      setImageScale();
-    }
-
-    function setImageScale() {
-      var width = (imageWidth * rulerSize) / scaleFactor;
-      var height = (imageHeight * rulerSize) / scaleFactor;
-      document.documentElement.style.setProperty('--image-width', width + 'in');
-      document.documentElement.style.setProperty('--image-height', height + "in");
-    }
-    setImageScale();
-    
-    function displayImage() {
-      var image = document.getElementById('output')
-      var url = URL.createObjectURL(event.target.files[0]);
-      image.style.setProperty('background-image', "url(" + url + ")");
-    }
-  </script>
   <script src="script.js"></script>
 </body>
 
