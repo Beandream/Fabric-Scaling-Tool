@@ -66,6 +66,33 @@ html {
 
 #veiw-scale-options {
   position: absolute;
-  top: -0.25in;
-  /* display: grid; */
+  top: -18px;
+}
+
+.scale-option-label {
+  margin-left: 12px;
+}
+
+.scale-option-label > span{
+  border: 1px black solid;
+  border-radius: 4px 4px 0 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.scale-option-label > input{
+  appearance: none;
+  display: none;
+  margin: 0;
+}
+
+.scale-option-label > span:hover{
+  background-color: #dbdbdb;
+
+}
+
+.scale-option-label :checked + span {
+  color: #e3e3e3;
+  background-color: #4a4a4a;
+  /* font-weight: bold; */
 }
