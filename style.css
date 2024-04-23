@@ -56,3 +56,9 @@ html {
     linear-gradient(to right, grey var(--ruler-thickness), transparent var(--ruler-thickness)),
     linear-gradient(to bottom, grey var(--ruler-thickness), transparent var(--ruler-thickness));
 }
+
+#width, #height {
+  width: 2rem;
+  height: 2rem;
+  text-align: right;
+}

@@ -16,12 +16,20 @@
     <div id="output" src="IMG_9480.JPG"></div>
   </div>
 
-  <input type="number" value="3" id="width"/>
-  <input type="number" value="3" id="height"/>
+  <input type="number" onchange="changeScale()" value="3" id="width"/>
+  <input type="number" onchange="changeScale()" value="3" id="height"/>
 
   <input type="file" onchange="displayImage()" />
 
   <script>
+
+    function changeScale() {
+      width = document.getElementById("width");
+      height = document.getElementById("height");
+      document.documentElement.style.setProperty('--image-width', width.value + 'in');
+      document.documentElement.style.setProperty('--image-height', height.value + "in");
+    }
+    
     function displayImage() {
       var image = document.getElementById('output')
       image.src = URL.createObjectURL(event.target.files[0]);
